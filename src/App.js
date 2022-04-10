@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  var social=["Services","Projects","About"]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <nav id='navbr'>
+     <div class="ab">
+       <One/>
+     </div>
+     <div id='thr'>
+       {
+        social.map((e) => {
+          return <Two to={e}/>
+        })
+       }
+     </div>
+     <div>
+       <Three/>
+     </div>
+   </nav>
   );
 }
 
+function One(){
+  return <p>LOGOBAKERY</p>
+}
+function Two({to}){
+  return <a href='#'>{to}</a>
+}
+function Three(){
+  return <button>Contact</button>
+}
+
+
+
+
+
 export default App;
+
